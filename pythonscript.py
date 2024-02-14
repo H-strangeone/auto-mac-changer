@@ -11,8 +11,8 @@ parser.add_option("-m", "--mac", dest="new_mac", help="its MAC address")
 interface=options.interface
 new_mac=options.new_mac
 
-subprocess.call(["sudo ifconfig"])
-subprocess.call(["sudo ifconfig", interface ,"down"])
-subprocess.call(["sudo ifconfig", interface,"hw ether", new_mac])
-subprocess.call(["sudo ifconfig", interface, "up"])
-subprocess.call(["sudo ifconfig"])
+subprocess.call(["sudo ifconfig"],shell=True)
+subprocess.call(["sudo ifconfig", interface ,"down"], shell= True)
+subprocess.call(["sudo ifconfig", interface,"hw ether", new_mac], shell=True)
+subprocess.call(["sudo ifconfig", interface, "up"],shell=True)
+subprocess.call(["sudo ifconfig"], shell= True)
